@@ -14,8 +14,10 @@
    Data da ultima alteracao: 8 de outubro de 2015.
 
 */
+#include <iostream>
 #include <stdio.h>
 #include <string>
+using namespace std;
 //#include "headers.h"
 using namespace std;
 class Node {

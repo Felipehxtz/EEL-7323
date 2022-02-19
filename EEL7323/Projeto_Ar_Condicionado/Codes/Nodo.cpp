@@ -16,6 +16,7 @@
 */
 
 #include "Nodo.h"
+#include <iostream>
 
 // Constructor - initializes the node
 //
