@@ -27,32 +27,36 @@ void List::insertBeforeFirst(int dat) {
 }
 */
 
-void Fila::insertAfterLast(int newID, string newDate) {
+void Fila::insertAfterLast(string newID, string newDate, string newHour) {
   Node* p = head;
   Node* q = head;
 
   if (head == 0) // lista está vazia?
-     head = new Node(newID, newDate, head);
+     head = new Node(newID, newDate, newHour, head);
   else {
      while (q != 0) {
         p = q;
         q = p->getNext();
      }
-     p->setNext(new Node(newID, newDate,0));
+     p->setNext(new Node(newID, newDate, newHour,0));
   }
 }
 
 
-int Fila::readFirstID() {
+string Fila::readFirstID() {
    return head->getID(); 
 }
+
 string Fila::readFirstDate(){
    return head->getDate();
 }
 
+string Fila::readFirstHour(){
+   return head->getHour();
+}
 
-int Fila::removeFirst() {
-  int retID = 0;
+string Fila::removeFirst() {
+  string retID = "";
   string retDate;
   if (head != 0){
      cout << "Removendo: " << head << endl;
@@ -66,6 +70,7 @@ int Fila::removeFirst() {
   }
   return retID;
 }
+
 
 /*
 void List::insertionSort(int value) {

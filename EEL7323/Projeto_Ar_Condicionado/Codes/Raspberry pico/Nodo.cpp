@@ -20,15 +20,16 @@
 
 // Constructor - initializes the node
 //
-Node::Node(int newID, string newDate, Node* nxt){
+Node::Node(string newID, string newDate, string newHour, Node* nxt){
        ID = newID;
        Date = newDate;
+       Hour  = newHour;
        next = nxt;
 }
 
 // getID returns the integer value stored in the node
 //
-int Node::getID(){
+string Node::getID(){
      return ID;
 }
 // getDate returns the string stored in the node
@@ -36,6 +37,10 @@ int Node::getID(){
 
 string Node::getDate(){
     return Date;
+}
+
+string Node::getHour(){
+    return Hour;
 }
 // getNext returns a pointer for the next node in the linked list
 //
@@ -45,13 +50,17 @@ Node* Node::getNext(){
 
 // setID stores the integer value in the node
 //
-void Node::setID(int newID){
+void Node::setID(string newID){
      ID = newID;
 }
 // setDate stores the string in the node
 //
 void Node::setDate(string newDate){
     Date = newDate;
+}
+
+void Node::setHour(string newHour){
+     Hour = newHour;
 }
 
 // setNext stores the pointer to the next node in the list in the "next" field

@@ -14,10 +14,11 @@ public:
   Fila();
   ~Fila();
   //void insertBeforeFirst(int dat);
-  void insertAfterLast(int newID, string newDate); //Add new at row
-  int readFirstID();
+  void insertAfterLast(string newID, string newDate, string newHour); //Add new at row
+  string readFirstID();
   string readFirstDate();
-  int removeFirst(); //Remove first at row
+  string readFirstHour();
+  string removeFirst(); //Remove first at row
   //void insertionSort(int value);
   //int removeNode(int dat);
   //void listAll();

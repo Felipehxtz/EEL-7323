@@ -14,6 +14,7 @@
    Data da ultima alteracao: 8 de outubro de 2015.
 
 */
+#include "ClockCalendar.cpp"
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -22,17 +23,20 @@
 using namespace std;
 class Node {
 
-    int ID;
+    string ID;
     string Date;
+    string Hour;
     Node* next;
 
   public:
          
-    Node(int newID, string newDate, Node* nxt);
-    int getID();
+    Node(string newID, string newDate, string newHour, Node* nxt);
+    string getID();
     string getDate();
+    string getHour();
     Node* getNext();
-    void setID(int newID);
+    void setID(string newID);
     void setDate(string newDate);
+    void setHour(string newHour);
     void setNext(Node* nxt);
 };
