@@ -45,13 +45,13 @@ int main(){
 
     while(true){
          
-        if( temp_atual != Temp.getTemperature() || gpio_get(25)!= 0){// temperatura diferente atual diferente a medida anteriormente ou botão pressionado?
+        if( temp_atual != Temp.getTemperature() || gpio_get(25)!= 0){// temperatura atual diferente da medida anteriormente OU botão pressionado?
             temp_atual = Temp.getTemperature();
             test.getClock(h,mi,s);
             test.getCalendar(d,m,y);
             conv.conv_to_str(h,mi,s,d,m,y);
-            fullDate = getStringDate();
-            fullHour = getStringHour();
+            fullDate = conv.getStringDate();
+            fullHour = conv.getStringHour();
             fila.insertAfterLast(ID, fullDate, fullHour);
             //Enviar parâmetros para Tensorflow Lite
             //Enviar parâmetros para o ar condicionado

@@ -19,7 +19,5 @@ public:
   string readFirstDate();
   string readFirstHour();
   string removeFirst(); //Remove first at row
-  //void insertionSort(int value);
-  //int removeNode(int dat);
-  //void listAll();
+  
 };

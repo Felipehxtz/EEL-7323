@@ -19,7 +19,7 @@ float tempsense::getTemperature(){
     adc_select_input(4);
     uint16_t raw = adc_read();
     const voltage = raw * conversion;
-    float temperature = 27 - (voltage - 0.706)/0.001721;//°C
+    float temperature = 27 - (voltage - 0.706)/0.001721;// temperatura em °C
     return temperature;
     
 
