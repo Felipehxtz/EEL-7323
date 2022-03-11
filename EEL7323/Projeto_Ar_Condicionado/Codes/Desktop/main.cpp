@@ -16,8 +16,10 @@
 
 int main(){
    int operacao;
+   int i = 0;
    string data1;
    Lista  lista;
+   string data_uart[265];
    Uart *ptr1;             // Uart.cpp
    ptr1 = new UartLinux(); // UartLinux.cpp
 
@@ -39,6 +41,17 @@ int main(){
    //cout << "valor: " << lista.readFirstHour() << endl;
    
    while(true){
+      if(/*porta serial conectada*/){
+         while( != NULL){
+            
+            ptr1->sendCommand() << endl;
+            string data_uart[i] = ptr1;
+            i++;
+                    
+         }
+         lista.insertBeforeFirst(string data_uart[i],string data_uart[i], string data_uart[i]);
+
+      }
       cout << "Digite 1 para listar todos os eventos em um determinado intervalo de tempo" << endl;
       cout << "Digite 2 para obter tempo total que o sistema se manteve ligado" << endl;
       cin >> operacao;
@@ -64,6 +77,7 @@ int main(){
 
   
   }
+  delete ptr1;
   return 0; // success
 
 }
