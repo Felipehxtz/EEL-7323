@@ -1,7 +1,7 @@
 #include "Fila.cpp"
 #include "ClockCalendar.cpp"
 #include "Convert_to_str.cpp"
-#include "tempsense.cpp"
+#include "TempSense.cpp"
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -34,18 +34,18 @@ int main(){
     int d,m,y,h,mi,s,val_valid;
     ClockCalendar test;
     Convert_to_str conv;
-    tempsense Temp;
-    float temp_atual;
+    TempSense Temp;
+    float temp_atual, last_temp;
     string ID = "0001";
     string fullHour, fullDate;
     test.setClockCalendar(1,1,2022,23,59,0);
-    temp_atual = Temp.getTemperature();
+    last_temp = Temp.getTemperature();
     gpio_init(25);
     gpio_set_dir(25, GPIO_IN);
 
     while(true){
-         
-        if( temp_atual != Temp.getTemperature() || gpio_get(25)!= 0){// temperatura atual diferente da medida anteriormente OU botão pressionado?
+         temp_atual = Temp.getTemperature();
+        if( last_temp != temp_atual || gpio_get(25)!= 0){// temperatura atual diferente da medida anteriormente OU botão pressionado?
             temp_atual = Temp.getTemperature();
             test.getClock(h,mi,s);
             test.getCalendar(d,m,y);

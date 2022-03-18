@@ -63,7 +63,7 @@ using namespace std;
       }
 
       case 'o':
-      case 'O': {             // open
+      case 'O': {             // 
          motorWord = 0x10;
          break;
       }

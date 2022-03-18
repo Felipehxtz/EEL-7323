@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
+#include "TempSense.h"
 
-class tempsense{
-    float temperature;
-public:
-    temp();
-    ~temp();
-    float getTemperature();
-    //Desenvolver Comunicação tensorFlow Lite
-} 
-float tempsense::getTemperature(){
+TempSense::TempSense(){
+    temperature = 20;
+}
+TempSense::~TempSense(){
+    temperature = 0;
+}
+
+float TempSense::getTemperature(){
 
     stdio_init_all();
     //configuração ADC
